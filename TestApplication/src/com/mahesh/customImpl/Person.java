@@ -1,22 +1,21 @@
 package com.mahesh.customImpl;
 
-
 public final class Person {
 
 	private final String name;
-	
+
 	private final String age;
 
 	public String getAge() {
 		return age;
 	}
 
-	public Person(String name,String age) {
-		
+	public Person(String name, String age) {
+
 		// TODO Auto-generated constructor stub
 		this.name = name;
 		this.age = age;
-		
+
 	}
 
 	public String getName() {
@@ -27,11 +26,11 @@ public final class Person {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		System.out.println(age.hashCode());
+//		System.out.println(age.hashCode());
 		result = prime * result + ((age == null) ? 0 : age.hashCode());
-		System.out.println("1..........."+result);
+	//	System.out.println("1..........." + result);
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		System.out.println(result);
+		//System.out.println(result);
 		return result;
 	}
 
@@ -57,5 +56,4 @@ public final class Person {
 		return true;
 	}
 
-	
 }
