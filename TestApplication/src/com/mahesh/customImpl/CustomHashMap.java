@@ -34,6 +34,19 @@ public class CustomHashMap<K,V> {
 	
 	public static void main(String[] args) {
 		
+		  Runtime runtime = Runtime.getRuntime();
+	      
+	      /**
+	      * Now,  Find out total Number Of Processors Available to
+	      * JVM (Java virtual machine) In System
+	      * We will use native method availableProcessors in java.
+	      */
+	      
+	      int numberOfProcessors = runtime.availableProcessors();
+	      
+	      System.out.println("total Number Of Processors Available to "
+	               + "JVM (Java virtual machine) In your System = "+numberOfProcessors);
+		
 	       CustomHashMap<Integer, Integer> hashMapCustom = new CustomHashMap<Integer, Integer>();
            hashMapCustom.put(21, 12);
            hashMapCustom.put(25, 121);
@@ -98,13 +111,60 @@ public class CustomHashMap<K,V> {
 	          }
 	      }
 		
+	   /**
+     * Method displays all key-value pairs present in HashMapCustom.,
+     * insertion order is not guaranteed, for maintaining insertion order
+     * refer LinkedHashMapCustom.
+     * @param key
+     */
+    public void display(){
+       
+       for(int i=0;i<capacity;i++){
+           if(table[i]!=null){
+                  Entry<K, V> entry=table[i];
+                  while(entry!=null){
+                        System.out.print("{"+entry.key+"="+entry.value+"}" +" ");
+                        entry=entry.next;
+                  }
+           }
+       }             
+    
+    }
 	
-	
+    
+    public boolean remove(K deleteKey){
+        
+        int hash=hash(deleteKey);
+               
+       if(table[hash] == null){
+             return false;
+       }else{
+         Entry<K,V> previous = null;
+         Entry<K,V> current = table[hash];
+         
+         while(current != null){ //we have reached last entry node of bucket.
+            if(current.key.equals(deleteKey)){               
+                if(previous==null){  //delete first entry node.
+                      table[hash]=table[hash].next;
+                      return true;
+                }
+                else{
+                      previous.next=current.next;
+                       return true;
+                }
+            }
+            previous=current;
+              current = current.next;
+           }
+         return false;
+       }
+     
+     }
 
 private int hash(K newKey) {
 		// TODO Auto-generated method stub
-	System.out.println(Math.abs(newKey.hashCode()));
-	System.out.println("HASH::"+Math.abs(newKey.hashCode()) % capacity);
+	
+	System.out.println(Math.abs(newKey.hashCode())+":::::HASH::"+Math.abs(newKey.hashCode()) % capacity);
 	return Math.abs(newKey.hashCode()) % capacity;
 	}
 
