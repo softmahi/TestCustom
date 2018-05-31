@@ -5,8 +5,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class Test {
+public class Test implements Comparable{
 	
 	
 	public int hashCode() {
@@ -30,6 +31,9 @@ public class Test {
 		return this.id.toString();
 	}
 	public static void main(String[] args) {
+		
+		ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap<>();
+		
 		Test t1 =new Test(1);
 		Test t2 =new Test(1);
 		
@@ -44,9 +48,14 @@ public class Test {
 		Iterator iter =s.iterator();
 		while (iter.hasNext()) {
 			System.out.println(iter.next());
-			Object object = (Object) iter.next();
+			//Object object = (Object) iter.next();
 			
 		}
+	}
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

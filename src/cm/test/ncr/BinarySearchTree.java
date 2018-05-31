@@ -8,6 +8,44 @@ import java.util.Stack;
  
 class BinarySearchTree {
  
+/*	
+	Technical test includes
+
+	Core Java (7-8 questions)
+	Puzzles (2-3 puzzles)
+	Quant(1-2 questions)
+	Time complexity (1 question)
+	Hadoop/bigdata/financial (1-2 questions)
+	All questions where conceptually tricky and to solve this questions you should clear your basics.You can easily eliminate the wrong options.For puzzles take a look at Top20 puzzles from geeksforgeeks.Refer head first Java and sounfoundry for Java.
+
+	Major concepts where from
+
+	Object class(functions in it)
+	Constructor
+	String,String buffer,Stringbuilder
+	Serialization, Deserialization
+	Inheritance
+	Static block
+	Wrapper class
+	Operators in java
+	Collections
+	Exception handling
+	Technical Interview would be purely based on your cv and basics of java
+
+	Technical Interview
+
+	Basics of Java
+	Project related questions
+	1-2 programming questions
+	Question related to cv
+	Puzzles
+	Problem solving questions.
+	All the best !
+
+	2.1k Views · View Upvoters
+*/
+	
+	
     boolean canRepresentBST(int pre[], int n) {
         // Create an empty stack
         Stack<Integer> s = new Stack<Integer>();
