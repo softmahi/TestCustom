@@ -1,6 +1,9 @@
 package com.mahesh.customImpl;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 class Employee {
     
@@ -43,8 +46,19 @@ class Employee {
 /** Copyright (c), AnkitMittal JavaMadeSoEasy.com */
 public class EmployeeOverride {
     public static void main(String...a){
+    	
+    	Map<String, String> test1 = new TreeMap<>();
+    	//test1.put(null, "1");
+    	test1.put("null", "1");
+    	test1.put("test", "1");
+    	test1.put("D", "1");
+    	test1.put("FGG", "1");
+    	test1.put("5345", "1");
+    	
+    	
+    	test1.forEach((k,v)->System.out.println("Item : " + k + " Count : " + v));
            
-           HashMap<Employee, String> hm=new HashMap<Employee, String>();
+           HashMap<Employee, String> hm=new LinkedHashMap<Employee, String>();
            hm.put(new Employee(1,"sam"), "employee1 data");
            hm.put(new Employee(2,"amy"), "employee2 data");
            

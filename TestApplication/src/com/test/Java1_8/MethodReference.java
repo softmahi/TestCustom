@@ -1,4 +1,4 @@
-package Java1_8;
+package com.test.Java1_8;
 
 import java.util.Arrays;
 import java.util.List;

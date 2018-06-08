@@ -1,20 +1,24 @@
-package Java1_8;
+package com.test.Java1_8;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Write Program to - Convert ArrayList in Streams - in java 8
  */
 public class ConvertArrayListInStreams {
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		List<String> stringList = new ArrayList<>();
 		stringList.add("ank");
 		stringList.add("sam");
-		stringList.add("az");
+		stringList.add("ad men");
 		stringList.add("neh");
-		stringList.add("ad");
+		stringList.add("ad mi");
 
 		// In one line display all records that start with 'a' in stringList
 		System.out.println("\n1. Use stream for filtering and display");
@@ -64,6 +68,18 @@ public class ConvertArrayListInStreams {
 		// In one line count records start with 'a' in stringList
 		long countOfRecordsStartsWithA = stringList.stream().filter((s) -> s.startsWith("a")).count();
 		System.out.println("countOfRecordsStartsWithA = " + countOfRecordsStartsWithA); // 3
+		
+		
+		String arr[] = {"Gulam jambun,Gulam jambun,Gajar Halwa,Rasmalai,Rasmalai,Gajar Halwa"};
+		
+		List chancelist=Arrays.asList(arr);
+		
+		  @SuppressWarnings("unchecked") int i=0;
+		Map result3 =  (Map) chancelist.stream().collect(
+	                Collectors.toMap(x -> x, x -> x));
+	
+		result3.forEach((x,y)->System.out.println(x+"<->"+y));
+		
 
 	}
 

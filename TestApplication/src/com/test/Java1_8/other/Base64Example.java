@@ -1,4 +1,4 @@
-package Java1_8;
+package com.test.Java1_8.other;
 
 import java.util.Base64;
 import java.util.UUID;
