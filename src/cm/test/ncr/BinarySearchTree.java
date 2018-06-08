@@ -54,13 +54,7 @@ class BinarySearchTree {
         // value
         int root = Integer.MIN_VALUE;
         
-        int k =2;
-        int q = 0;
-        for (int j = 0; j < k; j--) {
-        	q =j;
-			
-		}
-        System.out.println(q);
+        
         // Traverse given array
         for (int i = 0; i < n; i++) {
             // If we find a node who is on right side
