@@ -16,7 +16,7 @@ public class Main {
 		String y="hesh";
 		String z ="Mahesh";
 		String k = x+y;
-		//System.out.println(z==k);
+		System.out.println(z==k);
 		
 		//new Main().display(null);
 		

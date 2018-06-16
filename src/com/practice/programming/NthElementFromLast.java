@@ -1,6 +1,9 @@
 package com.practice.programming;
 
 public class NthElementFromLast {
+	
+	
+	//https://math.stackexchange.com/questions/977063/exactly-k-consecutive-heads-n-tosses
 	public class Node {
 		Node next;
 		int data;
