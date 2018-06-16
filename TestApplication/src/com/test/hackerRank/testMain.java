@@ -1,11 +1,17 @@
 package com.test.hackerRank;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.test.hackerRank.FO.BAR;
 
 public class testMain {
 
 	public static void main(String[] args) {
 		
+		String str = "Mahesh";
+		str.concat("Soft");
+		System.out.println(str);
 	Base b = new Derived();
 	b.show();
 	System.out.println("hi::");

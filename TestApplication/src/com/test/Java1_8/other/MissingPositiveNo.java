@@ -1,10 +1,6 @@
 package com.test.Java1_8.other;
 
 class MissingPositiveNo {
-	
-	
-	
-
 	/*
 	 * Utility function that puts all non-positive (0 and negative) numbers on left
 	 * side of arr[] and return count of such numbers

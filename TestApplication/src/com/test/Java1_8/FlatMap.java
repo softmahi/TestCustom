@@ -24,6 +24,8 @@ import java.util.stream.Stream;
 public class FlatMap {
 
 	public static void main(String[] args) {
+		
+		//Arrays.stream(int[] {1,2,3,4}).flatMap(n->n*3+1).filter(i->i>13).average().ifPresent(System.out::print);
 
 		showFlatMapLists();
 		showSort();
@@ -31,10 +33,22 @@ public class FlatMap {
 		sumWithIntStream();
 		showReduceSum();
 	}
+	
+	public static void showSort1() {
+
+		Stream.of(3, 2, 4, 0)
+
+				.sorted()
+
+				.forEach(System.out::println); // 0 2 3 4
+
+	}
 
 	public static void showFlatMapLists() {
 
 		List<Integer> numbers1 = Arrays.asList(1, 2, 3);
+		
+		
 
 		List<Integer> numbers2 = Arrays.asList(4, 5, 6);
 
@@ -60,7 +74,8 @@ public class FlatMap {
 
 		Integer sum = Stream.of(0, 1, 2, 3)
 
-				.mapToInt(num -> num)
+				.mapToInt(num -> num*3+1)
+				.filter(i->i>10)
 
 				.sum();
 

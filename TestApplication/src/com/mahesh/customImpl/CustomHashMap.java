@@ -3,11 +3,17 @@
  */
 package com.mahesh.customImpl;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * @author User1
  *
  */
 public class CustomHashMap<K, V> {
+	
+	
+	
+	
 
 	/**
 	 * @param args
@@ -32,6 +38,11 @@ public class CustomHashMap<K, V> {
 	}
 
 	public static void main(String[] args) {
+		
+		ConcurrentHashMap<String,String> h = new ConcurrentHashMap<>();
+		
+		h.put("A","1");
+		System.out.println(h.putIfAbsent("A", "1"));
 
 		Runtime runtime = Runtime.getRuntime();
 
