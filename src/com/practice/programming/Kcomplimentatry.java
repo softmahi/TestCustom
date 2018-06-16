@@ -1,4 +1,4 @@
-package jdk1_8;
+package com.practice.programming;
 
 import java.util.HashMap;
 import java.util.Map;
