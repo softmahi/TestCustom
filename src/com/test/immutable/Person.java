@@ -10,12 +10,12 @@ final class Person {
 
 		this.name = name;
 		this.age = age;
-		//this.address = new Address(address2.getRoadName());
-		this.address = address2;
+		this.address = new Address(address2.getRoadName());
+		//this.address = address2;
 	}
 
 	public Address getAddress() {
-		return address;
+		return new Address(address.getRoadName());
 	}
 
 	public int getAge() {

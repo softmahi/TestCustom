@@ -21,14 +21,23 @@ public class TestPerson {
 		enumExample.put(Days.Wednesday, "3");
 
 		Person p = new Person("Chintu", 12, new Address("KOl"));
+		
+		
+		HashMap k = new HashMap<Person,String>();
+		
+		k.put(p, "first");
+		System.out.println(new Person("Chintu", 12, new Address("KOl")).hashCode());
+		System.out.println(k.get(p));	
 
 		System.out.println(p);
 		System.out.println(p.hashCode());
 		tryModification(p.getName(), p.getAge(), p.getAddress());
 		System.out.println(p);
 		System.out.println(p.hashCode());
-
+		System.out.println(k.get(new Person("Chintu", 12, new Address("KOl"))));	
 		List<String> a = Collections.singletonList("http.aCCEPT");
+		
+
 
 	}
 
@@ -41,7 +50,7 @@ public class TestPerson {
 		System.out.println("Hi");
 		map.put("a", 1);
 		Map m = Collections.unmodifiableMap(map);
-		m.put("b", 1);
+		//m.put("b", 1);
 		// m.forEach((x,y)->System.out.println(x+"-"+y));
 
 	}

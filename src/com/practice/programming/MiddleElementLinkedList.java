@@ -58,6 +58,7 @@ public class MiddleElementLinkedList {
 	}
 
 	private void getNthElementFromLast(int i) {
+		System.out.println("Head data ::"+head.data);
 		Node main_ptr = head;
 		Node second_ptr = head;
 		int count = 0;

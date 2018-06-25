@@ -5,8 +5,62 @@ import java.util.List;
 
 public class MinStack {
 
-	public class Node {
+	static List<Node> stackList;
 
+	public static void main(String[] args) {
+
+		MinStack m = new MinStack();
+
+		m.push(5);
+		m.push(2);
+		m.push(-2);
+		m.push(10);
+	}
+
+	private void push(int data) {
+		Node node;
+		if (stackList == null) {
+			stackList = new ArrayList<Node>();
+
+			node = new Node(data);
+			node.max = data;
+			node.min = data;
+
+		} else {
+			node = new Node(data);
+
+			if (!stackList.isEmpty()) {
+				int min = Math.min(stackList.get(stackList.size() - 1).min, data);
+				int max = Math.max(stackList.get(stackList.size() - 1).max, data);
+				node.max = max;
+				node.min = min;
+			}
+
+		}
+		stackList.add(node);
+		print();
+	}
+
+	private void print() {
+		
+		if(stackList!=null  && !stackList.isEmpty()) {
+			for (int i = 0; i < stackList.size(); i++) {
+				
+				System.out.print(stackList.get(i).data+">");
+				if(i == (stackList.size()-1)) {
+				System.out.print("  min::"+stackList.get(i).min+"|");	
+				System.out.print("  max::"+stackList.get(i).max+"|");
+				}
+				
+				
+			}
+			System.out.println();
+		}
+		// TODO Auto-generated method stub
+		
+	}
+
+	static class Node {
 		int data;
 		int min;
 		int max;
@@ -15,81 +69,5 @@ public class MinStack {
 			this.data = data;
 		}
 
-		public Node() {
-			super();
-		}
-
 	}
-
-	List<Node> items;
-
-	public static void main(String[] args) {
-		MinStack s = new MinStack();
-		s.push(5);
-		s.push(15);
-		s.push(2);
-		s.getMin();
-		s.push(3);
-		s.pop();
-		s.pop();
-		s.push(0);
-		s.getMin();
-		s.push(-1);
-
-	}
-
-	private  void getMin() {
-		if(items!=null && !items.isEmpty() && items.size()>0) {
-			System.out.println("Min::"+items.get(items.size()-1).min);
-		}
-	}
-
-	private Node pop() {
-		Node popThis = null;
-		if (items != null && items.size() > 0) {
-			popThis = this.items.get(items.size() - 1);
-			items.remove(items.size() - 1);
-			// System.out.println("Popped > " + popThis.data);
-		}
-		printStack();
-		return popThis;
-
-	}
-
-	private void push(int data) {
-		if (items == null) {
-			items = new ArrayList<>();
-		}
-
-		Node item = new Node(data);
-
-		if (items.size() > 0) {
-			item.min = Math.min((items.get(items.size() - 1).min), data);
-			item.max = Math.max(items.get(items.size() - 1).max, data);
-		} else {
-			item.min = data;
-			item.max = data;
-
-		}
-		items.add(item);
-
-		printStack();
-	}
-
-	private void printStack() {
-
-		int i = 0;
-		for (Node n : items) {
-			System.out.print(n.data + " > ");
-			if (i == items.size() - 1) {
-				System.out.print(" | Min = " + n.min + " |");
-				System.out.print(" | Max = " + n.max + " |");
-
-			}
-			i++;
-		}
-		System.out.println();
-
-	}
-
 }
