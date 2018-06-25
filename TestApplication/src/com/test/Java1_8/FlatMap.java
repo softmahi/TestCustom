@@ -2,6 +2,8 @@ package com.test.Java1_8;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 /**
@@ -26,7 +28,29 @@ public class FlatMap {
 	public static void main(String[] args) {
 		
 		//Arrays.stream(int[] {1,2,3,4}).flatMap(n->n*3+1).filter(i->i>13).average().ifPresent(System.out::print);
+		
+		
+		List userList = Arrays.asList(
+				new User("Sam", 12, Arrays.asList(1,2,4)),
+				new User("Tam", 22, Arrays.asList(1,5,4)) ,
+				new User("SOM", 42, Arrays.asList(2,4)) ,
+				new User("AM", 45, Arrays.asList(7,2,4)) 
+				);
 
+		
+		userList.stream().flatMap(new Function<Stream<String>, Stream>() {
+
+			@Override
+			public Stream<String> apply(Stream<String> stringStram) {
+				
+				
+				return stringStram.filter(phoneNo-> phoneNo.equals("5"));
+				
+			}
+		});
+		
+		
+		
 		showFlatMapLists();
 		showSort();
 
@@ -93,4 +117,50 @@ public class FlatMap {
 
 	}
 
+	public static class User  {
+		
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public int getAge() {
+			return age;
+		}
+		public void setAge(int age) {
+			this.age = age;
+		}
+		public List getPhoneNos() {
+			return phoneNos;
+		}
+		public void setPhoneNos(List phoneNos) {
+			this.phoneNos = phoneNos;
+		}
+		
+		
+		
+		public User(String name, int age, List<Integer> list) {
+			super();
+			this.name = name;
+			this.age = age;
+			this.phoneNos = list;
+		}
+
+
+
+		 public User() {
+			// TODO Auto-generated constructor stub
+		}
+
+
+
+		String name;
+		
+		int age;
+		List phoneNos;
+		
+		
+		
+	}
 }
