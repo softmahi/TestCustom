@@ -11,13 +11,13 @@ public class OptionalExample {
 		
       //Optional.ofNullable - allows passed parameter to be null.
       Optional a = Optional.ofNullable(value1);
-		System.out.println(a);
+		System.out.println("1."+a);
 		
 		System.out.println(Optional.of(a));
 		
       //Optional.of - throws NullPointerException if passed parameter is null
       Optional<Integer> b = Optional.of(value2);
-      System.out.println(java8Tester.sum(a,b));
+      System.out.println("3."+java8Tester.sum(a,b));
    }
 	
    public Integer sum(Optional<Integer> a, Optional<Integer> b) {

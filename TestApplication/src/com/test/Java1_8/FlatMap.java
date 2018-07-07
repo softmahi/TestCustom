@@ -12,9 +12,11 @@ import java.util.stream.Stream;
  * https://dzone.com/articles/a-case-study-different-gc-algorithms-behavior-in-p?fromrel=true
  * 
  * 
- * 1.. No storage. A stream is not a data structure that stores elements; instead, it conveys elements from a source through a pipeline of computational operations.
+ * 1.. No storage. A stream is not a data structure that stores elements; 
+ * instead, it conveys elements from a source through a pipeline of computational operations.
 2. Functional in nature. An operation on a stream produces a result, but does not modify its source.
-3. Laziness-seeking. Many stream operations, such as filtering, mapping, or duplicate removal, can be implemented lazily, exposing opportunities for optimization.
+3. Laziness-seeking. Many stream operations, such as filtering, mapping, or duplicate removal, 
+can be implemented lazily, exposing opportunities for optimization.
 4. Possibly unbounded. While collections have a finite size, streams need not.
 5. Consumable. The elements of a stream are only visited once during the life of a stream.
  * 

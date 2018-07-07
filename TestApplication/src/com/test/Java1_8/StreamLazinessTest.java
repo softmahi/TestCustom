@@ -73,7 +73,7 @@ public class StreamLazinessTest {
 
    .map(employee -> {
 
-    System.out.println("In Map - " + employee.getName());
+//    System.out.println("In Map - " + employee.getName());
 
     return employee.getName();
 
